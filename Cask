@@ -1,7 +1,9 @@
 (source gnu)
 (source melpa)
 
-(package-file "TODO")
+(package-file "lazy-frame.el")
+
+(files "*.el")
 
 (development
  (depends-on "f")
