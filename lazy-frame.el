@@ -10,11 +10,14 @@
 
 ;;; Code:
 
+(defcustom lazy-frame-json "~/.emacs.d/lazy-frame.json"
+  "The JSON file saved defualt frame setting")
+
 (defun frame-setting-read ()
   (let ((json-object-type 'alist)
         (json-array-type 'list))
     (with-temp-buffer
-      (insert-file-contents "~/.emacs.d/frame.json")
+      (insert-file-contents lazy-frame-json)
       (json-read))))
 
 (defun make-frame-default ()
