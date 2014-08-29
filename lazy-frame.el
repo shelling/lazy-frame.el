@@ -24,7 +24,7 @@
 (defun lazy-frame-default ()
   "reset frame parameters as the same as frame.json"
   (interactive)
-  (modify-frame-parameters nil (frame-setting-read)))
+  (modify-frame-parameters nil (lazy-frame-read)))
 
 (defun lazy-frame-traditional ()
   "set height and width of frame to 80x24"
