@@ -13,19 +13,20 @@
 (defcustom lazy-frame-json "~/.emacs.d/lazy-frame.json"
   "The JSON file saved defualt frame setting")
 
-(defun frame-setting-read ()
+(defun lazy-frame-read ()
+  "read the frame settings from the file indicated in lazy-frame-json"
   (let ((json-object-type 'alist)
         (json-array-type 'list))
     (with-temp-buffer
       (insert-file-contents lazy-frame-json)
       (json-read))))
 
-(defun make-frame-default ()
+(defun lazy-frame-default ()
   "reset frame parameters as the same as frame.json"
   (interactive)
   (modify-frame-parameters nil (frame-setting-read)))
 
-(defun make-frame-traditional ()
+(defun lazy-frame-traditional ()
   "set height and width of frame to 80x24"
   (interactive)
   (modify-frame-parameters nil '((width . 80) (height . 24))))
